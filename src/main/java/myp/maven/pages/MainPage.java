@@ -41,7 +41,7 @@ public class MainPage {
     @Step("Перехід до розділу Text Box")
     public MainPage goToTextBox() {
         textBoxMenu.shouldBe(Condition.visible, Duration.ofSeconds(10));
-        highlightAndClick(textBoxMenu); // ✅ Тепер метод задіяно!
+        highlightAndClick(textBoxMenu);
         return this;
     }
 
@@ -69,7 +69,7 @@ public class MainPage {
     @Step("Натискання кнопки Submit")
     public MainPage submitForm() {
         // Підсвічуємо та клікаємо кнопку підтвердження
-        highlightAndClick(submitButton); // ✅ Метод використався і тут
+        highlightAndClick(submitButton);
         return this;
     }
 

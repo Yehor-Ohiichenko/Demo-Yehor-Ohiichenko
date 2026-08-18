@@ -17,11 +17,11 @@ public class DemoTest {
                 .goToTextBox()
                 .fillFullForm(
                         "Yehor Ohiichenko",
-                        "test@example.com",
+                        "testQA@example.com",
                         "Dnipro, Ukraine",
                         "Represents - demo test ."
                 )
                 .submitForm()
-                .verifyAllData("Yehor Ohiichenko", "test@example.com");
+                .verifyAllData("Yehor Ohiichenko", "testQA@example.com");
     }
 }
