@@ -21,14 +21,12 @@ public class MainPage {
     // Локатор результату
     private final SelenideElement outputBlock = $("#output");
 
-    // ДОПОМІЖНИЙ МЕТОД: Підсвічування та клік
     private void highlightAndClick(SelenideElement element) {
         element.scrollTo();
         // Малюємо яскраву рамку через JavaScript
         executeJavaScript("arguments[0].style.border='3px solid red'", element);
         sleep(1000); // Пауза для візуалізації
         element.click();
-        // Прибираємо рамку після кліку
         executeJavaScript("arguments[0].style.border='none'", element);
     }
 
@@ -47,7 +45,7 @@ public class MainPage {
 
     @Step("Заповнення форми: ім'я = {name}, email = {email}")
     public MainPage fillFullForm(String name, String email, String curAddr, String permAddr) {
-        // Заповнення полів через idiomatic Selenide .setValue()
+
         fullNameInput.shouldBe(Condition.visible).setValue(name);
         sleep(300);
 
@@ -68,7 +66,7 @@ public class MainPage {
 
     @Step("Натискання кнопки Submit")
     public MainPage submitForm() {
-        // Підсвічуємо та клікаємо кнопку підтвердження
+
         highlightAndClick(submitButton);
         return this;
     }
@@ -79,7 +77,6 @@ public class MainPage {
         $("#name").shouldBe(Condition.visible, Duration.ofSeconds(10)).shouldHave(Condition.text(name));
         $("#email").shouldBe(Condition.visible).shouldHave(Condition.text(email));
 
-        // Підсвічуємо результат зеленим наприкінці
         executeJavaScript("arguments[0].style.border='3px solid green'", outputBlock);
         sleep(2000);
     }
