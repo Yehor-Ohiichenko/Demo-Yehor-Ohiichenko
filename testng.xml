@@ -6,6 +6,7 @@
         <classes>
             <class name="test.DemoTest"/>
             <class name="test.WebTablesTest"/>
+            <class name="test.PracticeFormTest"/>
         </classes>
     </test>
 
