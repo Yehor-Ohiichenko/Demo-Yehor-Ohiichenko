@@ -3,9 +3,18 @@ package test;
 import myp.maven.pages.WebTablesPage;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+
+@Epic("Демонстраційний проєкт")
+@Feature("Перевірка та додавання даних у таблиці")
 public class WebTablesTest {
 
-    @Test(description = "Тест перевіряє відкриття сторінки Web Tables, заповнення модальної форми та перевірку появі запису в таблиці")
+    @Test(description = "Перевірка збереження запису в таблиці")
+    @Story("Додавання нового запису до таблиці")
+    @Description ("Тест відкриває сторінку Web Tables, перевіряє заголовок, тисне Add, заповнює модальну форму та перевіряє появу нового запису в таблиці")
     public void testAddANewRecord() {
         WebTablesPage tablesPage = new WebTablesPage();
 
@@ -26,6 +35,7 @@ public class WebTablesTest {
     }
 
     @Test(description = "Тест перевіряє редагування вже існуючого в таблиці запису")
+    @Story("Редагування існуючого запису в таблиці")
     public void testEditRecord() {
         WebTablesPage tablesPage = new WebTablesPage();
 

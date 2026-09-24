@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 @Feature("Форма реєстрації студента (Practice Form)")
 public class PracticeFormTest {
 
-    @Test
-    @Story("Перевірка валідації обов'язкового поля Mobile при відправці форми")
+    @Test(description = "Перевірка форми студента")
+    @Story("Перевірка успішного заповнення форми реєстрації студента")
     @Description("Тест відкриває форму, заповнює базові поля, обирає гендер, пропускає обов'язковий телефон та перевіряє помилку валідації")
     public void testPracticeFormFullFilling() {
         PracticeFormPage formPage = new PracticeFormPage();

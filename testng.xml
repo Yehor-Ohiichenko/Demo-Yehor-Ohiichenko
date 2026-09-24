@@ -8,6 +8,8 @@
             <class name="test.WebTablesTest"/>
             <class name="test.PracticeFormTest"/>
             <class name="test.SliderTest"/>
+            <class name="test.RegisterLoginTest"/>
+            <class name="test.RegisterLoginNegativeTest"/>
         </classes>
     </test>
 

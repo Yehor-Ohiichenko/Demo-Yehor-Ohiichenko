@@ -7,11 +7,12 @@ import io.qameta.allure.Story;
 import myp.maven.pages.SliderPage;
 import org.testng.annotations.Test;
 
-@Feature("Сторінка Slider")
+@Epic("Демонстраційний проєкт")
+@Feature("Елемент Slider")
 public class SliderTest {
 
-    @Test
-    @Story("Переміщення слайдера до значення 88 та перевірка значення")
+    @Test(description = "Переміщення повзунка до очікуваного значення")
+    @Story("Переміщення слайдера до потрібного значення")
     @Description("Відкриває сторінку Slider, перевіряє заголовок, переміщує повзунок до 88 і підтверджує, що значення оновилось")
     public void testSliderMovesToExpectedValue() {
         SliderPage sliderPage = new SliderPage();
