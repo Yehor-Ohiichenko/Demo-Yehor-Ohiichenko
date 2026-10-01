@@ -49,6 +49,9 @@ target/
 .allure
 .mvn
 
+# Local run logs
+api-run.log
+
 # Windows system files
 Thumbs.db
 ehthumbs.db

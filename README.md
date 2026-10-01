@@ -9,14 +9,14 @@
 - **Звіти:** Allure Framework
 - **Збірка проєкту:** Maven
 - **Архітектурний патерн:** Page Object Model (POM) + Fluent Interface
-- **Контроль версій:** Git Flow (`mai` + `develop` + `feature/` гілки)
+- **Контроль версій:** Git
 
 ## 📁 Структура проєкту
 ```text
 Demo-Yehor-Ohiichenko/
 ├── src/
-│   ├── main/java/myp/maven/pages/  # Page Object класи (MainPage.java)
-│   └── test/java/test/             # Тестові класи (DemoTest.java)
+│   ├── main/java/myp/maven/pages/  # Page Object класи
+│   └── test/java/test/             # Тестові класи ui та api
 ├── pom.xml                         # Конфігурація Maven та залежності
 └── README.md                       # Про збірку та запуск
 ```
@@ -32,31 +32,40 @@ Demo-Yehor-Ohiichenko/
 - **Slider** — переміщення повзунка до потрібного значення та перевірка результату.
 - **Web Tables** — додавання нового запису та редагування існуючого запису.
 
-Ці сценарії зібрані за патерном **Page Object Model** і мають описові аннотації Allure для зручного звіту.
+Ці сценарії зібрані за патерном **Page Object Model** і мають описові анотації Allure для зручного звіту.
 
-## Локальний запуск збірки
+### Локальний запуск UI збірки
 
-1. Клонуйте репозиторій або відкрийте проєкт у вашому IDE.
-2. Переконайтеся, що у вас встановлена **Java 21** та **Maven**.
-3. Запустіть весь набір UI-тестів через термінал:
    ```bash
-   mvn clean test
+   mvn clean test "-DsuiteXmlFile=testng.xml"
    ```
 
-4. Для запуску лише окремого набору UI-тестів:
-   ```bash
-   mvn test -Dtest=RegisterLoginTest,RegisterLoginNegativeTest,PracticeFormTest
-   ```
-
-## Генерація Allure-звіту
-Для генерації HTML-звіту із детальними кроками використати команду:
+### З генерацією Allure-звіту
 ```bash
-mvn clean test allure:serve
+mvn clean test allure:serve "-DsuiteXmlFile=testng.xml"
+```
+
+## API-сценарії
+
+- **Book Store API** — перевірка отримання книг та повторюваність результатів відповідей.
+- **Account API** — створення користувача, логін, генерація токена, отримання профілю користувача за UUID та видалення акаунта.
+
+Для API-тестів використовується **REST Assured + TestNG + Allure**. Реальні відповіді сервісу перевіряються за статус-кодами, JSON-структурою та контрактом даних.
+
+### Локальний запуск API збірки
+```bash
+mvn clean test "-DsuiteXmlFile=api-testng.xml"
+```
+
+### З генерацією Allure-звіту
+```bash
+mvn clean test allure:serve "-DsuiteXmlFile=api-testng.xml"
 ```
 
 ## Принципи проєкту
 - Підхід: **Page Object Model (POM)**
 - Тестування: **UI через Selenide + TestNG**
+- Тестування API: **REST Assured + TestNG**
 - Звітність: **Allure**
 - Стабільність: перевірка реальних сценаріїв і відлагоджування взаємодії з живим сайтом
 
