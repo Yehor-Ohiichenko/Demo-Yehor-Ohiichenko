@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Suite" verbose="1" parallel="false">
+
+    <test name="API Functionality Tests">
+        <classes>
+            <class name="test.BookStoreApiTest"/>
+            <class name="test.AccountApiTest"/>
+        </classes>
+    </test>
+
+</suite>
